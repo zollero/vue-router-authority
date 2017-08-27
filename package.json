@@ -1,5 +1,5 @@
 {
-  "name": "vue-router-guard",
+  "name": "vue-router-authority",
   "version": "1.0.0",
   "description": "A vue route authority.",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zollero/vue-router-guard.git"
+    "url": "git+https://github.com/zollero/vue-router-authority.git"
   },
   "author": "zollero <corona7@163.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zollero/vue-router-guard/issues"
+    "url": "https://github.com/zollero/vue-router-authority/issues"
   },
-  "homepage": "https://github.com/zollero/vue-router-guard#readme"
+  "homepage": "https://github.com/zollero/vue-router-authority#readme"
 }
