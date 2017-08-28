@@ -3,21 +3,21 @@
 export default class VueRouterGuard {
 
   constructor(options = {}) {
-
+    this.accessRoutes = options.accessRoutes || []
+    this.defaultRoute = options.defaultRoute || ''
+    // this.
   }
 
   RouterAuthority (to, from, next) {
     let { pageOperations } = store.state.login
 
     if (to.path === '/' || to.path === '/welcome') {
-      toggleLoading()
       next()
       return
     }
 
     if (pageOperations.length === 0) {
       if (from.name !== null) {
-        toggleLoading()
         next('/welcome')
         return
       } else {
@@ -30,7 +30,6 @@ export default class VueRouterGuard {
             routerHandler(to, from, next, pageOperations)
           } else {
             pageOperations = []
-            toggleLoading()
             next()
           }
         })
