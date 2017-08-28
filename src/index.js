@@ -38,7 +38,7 @@ export default class VueRouterGuard {
     } else {
       routerHandler(to, from, next, pageOperations)
     }
-  })
+  }
 }
 
 function routerHandler(to, from, next, pageOperations) {
