@@ -1,8 +1,4 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.vueRouterAuthority = factory());
-}(this, (function () { 'use strict';
+'use strict';
 
 var asyncGenerator = function () {
   function AwaitValue(value) {
@@ -147,7 +143,12 @@ var createClass = function () {
 
 var VueRouterGuard = function () {
   function VueRouterGuard() {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     classCallCheck(this, VueRouterGuard);
+
+    this.accessRoutes = options.accessRoutes || [];
+    this.defaultRoute = options.defaultRoute || '';
+    // this.
   }
 
   createClass(VueRouterGuard, [{
@@ -157,14 +158,12 @@ var VueRouterGuard = function () {
 
 
       if (to.path === '/' || to.path === '/welcome') {
-        toggleLoading();
         next();
         return;
       }
 
       if (pageOperations.length === 0) {
         if (from.name !== null) {
-          toggleLoading();
           next('/welcome');
           return;
         } else {
@@ -179,7 +178,6 @@ var VueRouterGuard = function () {
               routerHandler(to, from, next, pageOperations);
             } else {
               pageOperations = [];
-              toggleLoading();
               next();
             }
           });
@@ -214,7 +212,5 @@ function routerHandler(to, from, next, pageOperations) {
   }
 }
 
-return VueRouterGuard;
-
-})));
-//# sourceMappingURL=bundle.js.map
+module.exports = VueRouterGuard;
+//# sourceMappingURL=vue-router-authority.cjs.js.map

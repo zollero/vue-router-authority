@@ -2,9 +2,12 @@
   "name": "vue-router-authority",
   "version": "1.0.0",
   "description": "A vue route authority.",
-  "main": "index.js",
+  "main": "dist/vue-router-authority.cjs.js",
+  "module": "dist/vue-router-authority.esm.js",
+  "browser": "dist/vue-router-authority.umd.js",
   "scripts": {
-    "build": "rollup -c rollup.dev.config.js"
+    "dev": "rollup -w -c rollup.dev.config.js",
+    "build": "rollup -c rollup.build.config.js"
   },
   "repository": {
     "type": "git",
